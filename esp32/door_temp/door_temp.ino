@@ -252,6 +252,9 @@ void loop() {
   if (rawOpen != doorOpen && now - lastRawChangeMs >= DEBOUNCE_MS && clockReady()) {
     doorOpen = rawOpen;
     enqueueDoor(doorOpen);
+    if (doorOpen) {
+      beep(1, 120, 0);
+    }
   }
   if (now - lastTemperatureMs >= TEMPERATURE_EVERY_MS && clockReady()) {
     lastTemperatureMs = now;
