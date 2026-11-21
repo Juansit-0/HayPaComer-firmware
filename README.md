@@ -2,6 +2,8 @@
 
 The firmware of **HayPaComer**, the smart fridge that answers "what can I cook right now with what is actually at home?". Work happens here and goes straight to `main`; the history up to version 1.1.0 comes from the monorepo [Juansit-0/HayPaComer](https://github.com/Juansit-0/HayPaComer), with each commit kept under its original author.
 
+Live: https://haypacomer.jenilarper.dev (API docs at [/docs](https://haypacomer.jenilarper.dev/docs)).
+
 ## What is here
 
 - `esp32/door_temp/`: debounced reed switch, DS18B20 temperature every 30 s, NTP-stamped envelopes, batched upload with backoff, buzzer and RGB commands;
@@ -9,4 +11,4 @@ The firmware of **HayPaComer**, the smart fridge that answers "what can I cook r
 - `docs/firmware.md`: wiring, libraries, and flashing notes;
 - `docs/hardware.md`: bill of materials with links.
 
-Secrets live in a git-ignored `secrets.h`; `secrets.example.h` shows the shape. Without hardware, the monorepo scripts under `scripts/demo` simulate the same events against the API.
+Secrets live in a git-ignored `secrets.h`; `secrets.example.h` shows the shape. Without hardware, the demo scripts `scripts/demo/seed.py` and `sensors.py` (in the original monorepo, [Juansit-0/HayPaComer](https://github.com/Juansit-0/HayPaComer)) simulate the same events against the API.
